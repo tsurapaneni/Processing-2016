@@ -1,19 +1,30 @@
-
-int x = 0;
-int speed = 50;
+int x1 = 0;
+int x2 = 0;
+int y1 = 0;
+int y2 = 0;
+int speed = 5;
 void setup()
 {
   println("I'm starting up");
-   size(500, 500);
- background(#082EFF);
+  y1 = (int)(Math.random()*50);
+  y2 = (int)(Math.random()*50);
+   size(1200, 1200);
 }
 
 void draw()
 {
   println("I'm running");
-  delay(1000);
-  ellipse(x, 75, 75, 75);
-  x = x+speed;
+  background(#082EFF);
+  delay(25);
+  fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+  x1 = x1+speed;
+  fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+  ellipse(x1,y1, y2, y2 );
+  x1 = x1+speed;
+  if (keyPressed == false){
+    y1 = y1+5;
+  } else if (keyPressed == true){
+      y1 = y1-10;
+  }
+  
 }
-
-
