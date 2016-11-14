@@ -1,0 +1,35 @@
+int x1 = 0;
+int y1 = 0;
+int x2 = 0;
+int y2 = 0;
+void setup()
+{
+  size(1200, 1200);
+}
+
+void draw()
+{
+   background( 0, 0, 0);
+   fill(#F6FF00);
+   ellipse(x1, y1, 50, 50);
+   if (keyPressed){
+     if (key == 'd'){
+       x1 = x1+5;
+     }
+   }
+   if (keyPressed){
+     if (key == 'a'){
+       x1 = x1-5;
+     }
+   }
+   if (keyPressed){
+     if (key == 'w'){
+       y1 = y1-5;
+     }
+   }
+   if (keyPressed){
+     if (key == 's'){
+       y1 = y1+5;
+     }
+   }
+}
