@@ -1,7 +1,9 @@
 int x1 = 0;
 int y1 = 0;
-int x2 = 0;
-int y2 = 0;
+boolean right = true;
+boolean left = false;
+boolean up = false;
+boolean down = false;
 void setup()
 {
   size(1200, 1200);
@@ -11,25 +13,54 @@ void draw()
 {
    background( 0, 0, 0);
    fill(#F6FF00);
-   ellipse(x1, y1, 50, 50);
+   if (right == true){
+     arc(x1,y1,50,50,QUARTER_PI, PI+HALF_PI+QUARTER_PI);
+   }
+   if (left == true){
+     arc(x1,y1,50,50,PI+QUARTER_PI, TWO_PI+HALF_PI+QUARTER_PI);
+   }
+   if (up == true){
+     arc(x1,y1,50,50, TWO_PI-QUARTER_PI, PI+QUARTER_PI);
+   }
+   if (down == true){
+     arc(x1,y1,50,50,HALF_PI+QUARTER_PI, TWO_PI+QUARTER_PI);
+   }
+   
    if (keyPressed){
      if (key == 'd'){
        x1 = x1+5;
+       right = true;
+       left = false;
+       up = false;
+       down = false;
+       
      }
    }
    if (keyPressed){
      if (key == 'a'){
        x1 = x1-5;
+       right = false;
+       left = true;
+       up = false;
+       down = false;
      }
    }
    if (keyPressed){
      if (key == 'w'){
        y1 = y1-5;
+       right = false;
+       left = false;
+       up = true;
+       down = false;
      }
    }
    if (keyPressed){
      if (key == 's'){
        y1 = y1+5;
+       right = false;
+       left = false;
+       up = false;
+       down = true;
      }
    }
 }
