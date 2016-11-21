@@ -72,3 +72,14 @@ void draw()
      y2 = y2-1000;
    }
 }
+
+public class White_dots
+{
+  int x2 = 0;
+  int y2 = 0;
+  
+  public White_dots(int x2, int y2)
+  {
+    ellipse(x2, y2, 10, 10);
+  }
+}
