@@ -70,6 +70,8 @@ void draw()
    if ((x2-25)<x1 && x1<(x2+25) && (y2-25)<y1 && y1<(y2+25)){
      x2 = (int)(Math.random()*600)+10;
      y2 = (int)(Math.random()*600)+10;
+     score = score +1;
+      print(score);
    }
 }
 
