@@ -6,6 +6,7 @@ boolean right = true;
 boolean left = false;
 boolean up = false;
 boolean down = false;
+int score = 0;
 void setup()
 {
   size(1200, 1200);
@@ -31,47 +32,56 @@ void draw()
    }
    
    if (keyPressed){
-     if (key == 'd'){
-       x1 = x1+5;
-       right = true;
-       left = false;
-       up = false;
-       down = false;
-       
+     if (key == CODED){
+       if(keyCode == RIGHT){
+        x1 = x1+5;
+        right = true;
+        left = false;
+        up = false;
+        down = false;
+       }
      }
    }
    if (keyPressed){
-     if (key == 'a'){
+     if (key == CODED){
+       if(keyCode == LEFT){
        x1 = x1-5;
        right = false;
        left = true;
        up = false;
        down = false;
+       }
      }
    }
    if (keyPressed){
-     if (key == 'w'){
-       y1 = y1-5;
-       right = false;
-       left = false;
-       up = true;
-       down = false;
+     if (key == CODED){
+       if(keyCode == UP){
+         y1 = y1-5;
+         right = false;
+         left = false;
+         up = true;
+         down = false;
+       }
      }
    }
    if (keyPressed){
-     if (key == 's'){
+     if (key == CODED){
+       if(keyCode == DOWN){
        y1 = y1+5;
        right = false;
        left = false;
        up = false;
        down = true;
+       }
      }
    }
+     
    if ((x2-25)<x1 && x1<(x2+25) && (y2-25)<y1 && y1<(y2+25)){
-     x2 = (int)(Math.random()*600)+10;
-     y2 = (int)(Math.random()*600)+10;
-     score = score +1;
+      x2 = (int)(Math.random()*600)+10;
+      y2 = (int)(Math.random()*600)+10;
+      score = score +1;
       print(score);
+      
    }
 }
 
